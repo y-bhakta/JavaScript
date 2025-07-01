@@ -1,0 +1,12 @@
+let product='Books';
+let price=10.25;
+let quty=3;
+let dicount=0.1;
+let totalprice=price*quty;
+let net=totalprice-(totalprice*dicount);
+console.log(`Product: ${product}`);
+console.log(`Price: ${price}`);
+console.log(`Quntity: ${quty}`);
+console.log(`Discount: ${dicount}`);
+console.log(`Total: ${totalprice}`);
+console.log(`Net: ${net}`);
