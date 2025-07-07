@@ -1,4 +1,4 @@
-let name = "Leo";
+let name = "Yash";
 let rollNo = 69;
 let sub1 = 85;
 let sub2 = 90;

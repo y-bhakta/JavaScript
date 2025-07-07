@@ -13,4 +13,5 @@ if(amount>=500000 && year>=5){
 let netamount=amount+interest;
 console.log(`Amount To Invest: ${amount}`);
 console.log(`Year To Invest: ${year}`);
-console.log(`Net Amount: ${net}`);
+console.log(`Interest Amount: ${interest}`);
+console.log(`Net Amount: ${netamount}`);

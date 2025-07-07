@@ -5,4 +5,6 @@ if(temp < 0){
     console.log("Cold");
 }else if(temp >= 20 && temp < 30){
     console.log("Warm")
+}else{
+    console.log("Hot");    
 }
