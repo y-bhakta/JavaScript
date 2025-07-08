@@ -2,7 +2,7 @@
 <br>
 <h3>Prog1</h3>
 <br>
-<img src="./imgages/prog1.png">
+<img src="./imgages/1.png">
 <br>
 <h3>Prog2</h3>
 <br>
