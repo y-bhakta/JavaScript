@@ -1,0 +1,28 @@
+let str1="String IN Double Inverted Coma";
+let str2='String IN Single INverted Coma';
+let str3=`String IN Back Ticks`;
+console.log(str1);
+console.log(str2);
+console.log(str3);
+console.log(`Str1: ${str1},Str2: ${str2},Str3: ${str3}`);
+//Methods
+let text = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+let length = text.length;
+console.log(length);
+let text1 = "HELLO WORLD";
+let char = text.charAt(0);
+console.log(char);
+const name = "Red & White Skill Education";
+let letter = name.at(2);
+console.log(name);
+let text3 = "Hello";
+let text2 = "World";
+let text4 = text3.concat(" ", text2);
+console.log(text4);
+let text5 = "Apple, Banana, Kiwi";
+let part = text5.slice(7, 13);
+console.log(part);
+console.log(text5.substring(1,5));
+let str = "Apple, Banana, Kiwi";
+let part2 = str.substring(7, 13);  
+console.log(part2); 
