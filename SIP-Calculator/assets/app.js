@@ -30,16 +30,30 @@ const Range = () =>{
 }
 
 const SIP = () => {
-  const amount=parseFloat(investValue.value);
-  const estrtn=parseFloat(RateValue.value);
-  const year=parseFloat(TimeValue.value);
-  const investment=amount*12*year;
-  const totalestrtn=(amount*12)*(estrtn/100);
-
-  invest_amount.innerText="₹"+investment.toLocaleString("en-IN",{maximumFractionDigits:0});
-  est_return.innerText="₹"+(totalestrtn*year).toLocaleString("en-IN",{maximumFractionDigits:0});
-  total_val.innerText="₹"+(investment + (totalestrtn*year)).toLocaleString("en-IN",{maximumFractionDigits:0});
-
+  const P = parseFloat(investValue.value) || 0;
+  const r = (parseFloat(RateValue.value) || 0) / 100 / 12;
+  const n = (parseFloat(TimeValue.value) || 0) * 12;
+  let totalInvest = P * n;
+  let maturity = 0;
+  if (r > 0 && n > 0) {
+    maturity = P * ((Math.pow(1 + r, n) - 1) / r) * (1 + r);
+  }
+  let estReturn = maturity - totalInvest;
+  invest_amount.innerText =
+    "₹" +
+    (totalInvest
+      ? totalInvest.toLocaleString("en-IN", { maximumFractionDigits: 0 })
+      : 0);
+  est_return.innerText =
+    "₹" +
+    (estReturn > 0
+      ? estReturn.toLocaleString("en-IN", { maximumFractionDigits: 0 })
+      : 0);
+  total_val.innerText =
+    "₹" +
+    (maturity > 0
+      ? maturity.toLocaleString("en-IN", { maximumFractionDigits: 0 })
+      : 0);
 }
 
 SIP();

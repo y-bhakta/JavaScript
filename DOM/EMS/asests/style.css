@@ -1,0 +1,201 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #0d1b2a;
+}
+
+.hide {
+    display: none;
+}
+
+.nohide {
+    display: block;
+}
+.wr{
+    font-family: "Winky Rough", sans-serif;
+}
+.heading {
+    color: #e0e1dd;
+    font-family: "Winky Rough", sans-serif;
+}
+
+.addemp {
+    background-color: #415a77;
+    border-radius: 20px;
+
+    --border-angle: 0turn;
+    --main-bg: conic-gradient(from var(--border-angle),
+            #213,
+            #112 5%,
+            #112 60%,
+            #213 95%);
+
+    border: solid 5px transparent;
+    border-radius: 2em;
+    --gradient-border: conic-gradient(from var(--border-angle), transparent 25%, #08f, #f03 99%, transparent);
+
+    background:
+        var(--main-bg) padding-box,
+        var(--gradient-border) border-box,
+        var(--main-bg) border-box;
+
+    background-position: center center;
+
+    animation: bg-spin 3s linear infinite;
+
+    @keyframes bg-spin {
+        to {
+            --border-angle: 1turn;
+        }
+    }
+
+    &:hover {
+        animation-play-state: paused;
+    }
+}
+
+@property --border-angle{
+    syntax: "<angle>";
+    inherits: true;
+    initial-value: 0turn;
+}
+
+select::placeholder {
+    color: white !important;
+}
+
+.addbtn {
+    background-color: #1b263b;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+.addbtn:hover {
+    background-color: #0d1b2a;
+    color: #fff;
+}
+
+.searchemp {
+    background-color: #415a77;
+    border-radius: 10px;
+    --border-angle: 0turn;
+    --main-bg: conic-gradient(from var(--border-angle),
+            #213,
+            #112 5%,
+            #112 60%,
+            #213 95%);
+
+    border: solid 5px transparent;
+    border-radius: 2em;
+    --gradient-border: conic-gradient(from var(--border-angle), transparent 25%, #08f, #f03 99%, transparent);
+
+    background:
+        var(--main-bg) padding-box,
+        var(--gradient-border) border-box,
+        var(--main-bg) border-box;
+
+    background-position: center center;
+
+    animation: bg-spin 3s linear infinite;
+
+    @keyframes bg-spin {
+        to {
+            --border-angle: 1turn;
+        }
+    }
+
+    &:hover {
+        animation-play-state: paused;
+    }
+}
+
+.tableemp {
+    background-color: #415a77;
+    border-radius: 10px;
+    --border-angle: 0turn;
+    --main-bg: conic-gradient(from var(--border-angle),
+            #213,
+            #112 5%,
+            #112 60%,
+            #213 95%);
+
+    border: solid 5px transparent;
+    border-radius: 2em;
+    --gradient-border: conic-gradient(from var(--border-angle), transparent 25%, #08f, #f03 99%, transparent);
+
+    background:
+        var(--main-bg) padding-box,
+        var(--gradient-border) border-box,
+        var(--main-bg) border-box;
+
+    background-position: center center;
+
+    animation: bg-spin 3s linear infinite;
+
+    @keyframes bg-spin {
+        to {
+            --border-angle: 1turn;
+        }
+    }
+
+    &:hover {
+        animation-play-state: paused;
+    }
+}
+
+.navbtn {
+    border: none;
+    ;
+    background-color: transparent;
+    color: #e0e1dd;
+    font-size: 20px;
+    padding: 10px 5px;
+}
+
+.navbtn:hover {
+    color: #fff;
+    background-color: #1b263b;
+    border-radius: 5px;
+}
+.active{
+    color: #fff;
+    background-color: #1b263b;
+    border-radius: 5px;
+}
+.datatable{
+    --border-angle: 0turn;
+    --main-bg: conic-gradient(from var(--border-angle),
+            #213,
+            #112 5%,
+            #112 60%,
+            #213 95%);
+
+    border: solid 5px transparent;
+    border-radius: 2em;
+    --gradient-border: conic-gradient(from var(--border-angle), transparent 25%, #08f, #f03 99%, transparent);
+
+    background:
+        var(--main-bg) padding-box,
+        var(--gradient-border) border-box,
+        var(--main-bg) border-box;
+
+    background-position: center center;
+
+    animation: bg-spin 3s linear infinite;
+
+    @keyframes bg-spin {
+        to {
+            --border-angle: 1turn;
+        }
+    }
+
+    &:hover {
+        animation-play-state: paused;
+    }
+}
