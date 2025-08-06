@@ -7,18 +7,19 @@ function removeactive(){
     items.forEach(item => item.classList.remove('active'));
     boxs.forEach(item => item.classList.remove('active2'));
 }
-prev.addEventListener("click",()=>{
+const prevslide=()=>{
     currentindex=(currentindex - 1 + items.length) % items.length;
     removeactive();
     items[currentindex].classList.add('active');
     boxs[currentindex].classList.add('active2');
-});
-next.addEventListener("click",()=>{
+};
+const nextslide=()=>{
     currentindex=(currentindex + 1) % items.length;
     removeactive();
     items[currentindex].classList.add('active');
     boxs[currentindex].classList.add('active2');
-}); 
+};
+setInterval(nextslide,2000); 
 // ----- Slider 2 Start -----
 const slides2=document.querySelectorAll('.slide2');
 var counter1=0;

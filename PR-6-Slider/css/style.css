@@ -2,7 +2,10 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-}  
+} 
+a{
+    text-decoration: none;
+} 
 .active{
     display: block !important;
 } 
@@ -77,6 +80,14 @@ header .navbar-nav .nav-item a {
     border-radius: 5px;
 }
 /* Home Slider End */
+/* Footer Start */
+.unho a{
+    font-size: 15px !important;
+}
+.unho a:hover{
+    text-decoration: underline;
+}
+/* Footer End */
 @media (max-width:575px) {
     .slider{
         height: 250px;
