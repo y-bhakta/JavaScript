@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let stud={
+            name: "Raj",
+            age:20,
+            displayestud(){
+                console.log(`${this.name} is ${this.age} years old`);                
+            }
+        }
+        let stud1={
+            name: "Ved",
+            age:16
+        }
+        stud1.__proto__ = stud;
+        console.log(stud1);
+        stud1.displayestud();        
+    </script>
+</body>
+</html>
