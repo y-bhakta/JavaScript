@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>User</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+
+<body>
+    <main>
+        <section>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-6">
+                        <h2 class="text-center">User Rigestration..</h2>
+                        <form class="row g-3" onsubmit="return false;">
+                            <div class="col-md-6">
+                                <label for="inputEmail4" class="form-label">Email</label>
+                                <input type="email" name="Email" class="form-control form-input" id="inputEmail4">
+                                <span class="Email-messgase text-danger"></span>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="inputPassword4" class="form-label">Password</label>
+                                <input type="password" name="Password" class="form-control form-input" id="inputPassword4">
+                                <span class="Password-messgase text-danger"></span>
+                            </div>
+                            <div class="col-12">
+                                <label for="inputAddress" class="form-label">Address</label>
+                                <input type="text" name="Address" class="form-control form-input" id="inputAddress" placeholder="1234 Main St">
+                                <span class="Address-messgase text-danger"></span>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="inputCity" class="form-label">City</label>
+                                <input type="text" name="City" class="form-control form-input" id="inputCity">
+                                <span class="City-messgase text-danger"></span>
+                            </div>
+                            <div class="col-md-4">
+                                <label for="inputState" class="form-label">State</label>
+                                <select id="inputState" name="State" class="form-select form-input">
+                                    <option selected value="">Choose...</option>
+                                    <option>Gujarat</option>
+                                    <option>Maharashtra</option>
+                                    <option>Rajashthan</option>
+                                    <option>Karnataka</option>
+                                </select>
+                                <span class="State-messgase text-danger"></span>
+                            </div>
+                            <div class="col-md-2">
+                                <label for="inputZip" class="form-label">Zip</label>
+                                <input type="text" name="Zip" class="form-control form-input" id="inputZip">
+                                <span class="Zip-messgase text-danger"></span>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-check">
+                                    <input class="form-check-input form-input" name="Check" type="checkbox" id="gridCheck">
+                                    <label class="form-check-label" for="gridCheck">
+                                        Check me out
+                                    </label>
+                                    <span class="Check-messgase text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <button onclick="registration();" type="submit" class="btn btn-primary">Sign in</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
+    <script>
+        let inputs=document.querySelectorAll('.form-input');
+
+        let registration=()=>{
+            inputs.forEach((input) => {
+                let {name,value,checked,type}=input;   
+                if(value==''){
+                    document.querySelector(`.${name}-messgase`).innerText=`${name} is Required.`;
+                }else if(type=='checkbox'||type=='radio' && !checked){
+                    document.querySelector(`.${name}-messgase`).innerText=`${name} is Required.`;
+                }else{
+                    document.querySelector(`.${name}-messgase`).innerText=``;
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>

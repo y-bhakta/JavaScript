@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Student</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+
+<body>
+    <main>
+        <section>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-6">
+                        <h2 class="text-center">Student Rigestration..</h2>
+                        <form class="row g-3" onsubmit="return false;">
+                            <div class="col-md-6">
+                                <label for="inputEmail4" class="form-label">Email</label>
+                                <input type="email" name="Email" class="form-control form-input" id="inputEmail4">
+                                <span class="Email-messgase text-danger"></span>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="inputPassword4" class="form-label">Moblie(+91)</label>
+                                <input type="number" name="Number" class="form-control form-input" id="inputNumber">
+                                <span class="Number-messgase text-danger"></span>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="inputEmail4" class="form-label">First Name</label>
+                                <input type="text" name="FirstName" class="form-control form-input" id="inputEmail4">
+                                <span class="FirstName-messgase text-danger"></span>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="inputPassword4" class="form-label">Last Name</label>
+                                <input type="text" name="LastName" class="form-control form-input" id="inputNumber">
+                                <span class="LastName-messgase text-danger"></span>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="inputCity" class="form-label">City</label>
+                                <input type="text" name="City" class="form-control form-input" id="inputCity">
+                                <span class="City-messgase text-danger"></span>
+                            </div>
+                            <div class="col-md-4">
+                                <label for="inputState" class="form-label">Course</label>
+                                <select id="inputState" name="Course" class="form-select form-input">
+                                    <option selected value="">Choose...</option>
+                                    <option>BSc IT</option>
+                                    <option>BCA</option>
+                                    <option>B.Tech</option>
+                                    <option>MSc IT</option>
+                                </select>
+                                <span class="Course-messgase text-danger"></span>
+                            </div>
+                            <div class="col-md-4">
+                                <label for="inputZip" class="form-label">ABC ID</label>
+                                <input type="text" name="ID" class="form-control form-input" id="inputZip">
+                                <span class="ID-messgase text-danger"></span>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-check">
+                                    <input class="form-check-input form-input" name="Check" type="checkbox" id="gridCheck">
+                                    <label class="form-check-label" for="gridCheck">
+                                        Check me out
+                                    </label>
+                                    <span class="Check-messgase text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <button onclick="registration();" type="submit" class="btn btn-primary">Sign in</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
+    <script>
+        let inputs=document.querySelectorAll('.form-input');
+
+        let registration=()=>{
+            inputs.forEach((input) => {
+                let {name,value,checked,type}=input;   
+                if(value==''){
+                    document.querySelector(`.${name}-messgase`).innerText=`${name} is Required.`;
+                }else if(type=='checkbox'||type=='radio' && !checked){
+                    document.querySelector(`.${name}-messgase`).innerText=`${name} is Required.`;
+                }else{
+                    document.querySelector(`.${name}-messgase`).innerText=``;
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>
