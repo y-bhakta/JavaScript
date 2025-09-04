@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Download & Watch</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+    <!-- Style -->
+    <style>
+        body {
+            background: linear-gradient(90deg, #ccd5ae, #e9edc9, #fefae0, #faedcd, #d4a373);
+        }
+
+        .watch-bg {
+            background: linear-gradient(90deg, #d4a373, #faedcd, #fefae0, #e9edc9, #ccd5ae);
+            box-shadow: 0px 0px 5px black;
+        }
+    </style>
+
+</head>
+
+<body>
+    <main>
+        <div class="container py-2">
+            <div class="row my-3">
+                <div class="col-12">
+                    <h2 class="text-center">Progress Bar</h2>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-6">
+                    <div class="progress my-3">
+                        <div id="progress" class="progress-bar progress-bar-striped progress-bar-animated"></div>
+                    </div>
+                    <div id="msg" class="text-center text-info"></div>
+                    <button id="download" class="btn btn-success">Download</button>
+                    <button id="stop" class="btn btn-warning">Stop</button>
+                </div>
+            </div>
+        </div>
+        <div class="container my-3 py-2">
+            <div class="row my-3">
+                <div class="col-12">
+                    <h2 class="text-center">Stop Watch</h2>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-6 watch-bg py-3 rounded-3">
+                    <div class="col-12 d-flex justify-content-center align-items-center">
+                        <div class="col-6 bg-white py-2 rounded-3">
+                            <h3 class="text-center" id="digits"></h3>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-center">
+                        <button class="btn btn-success ms-2 my-2" id="start">Start</button>
+                        <button class="btn btn-danger ms-2 my-2" id="timestop">Stop</button>
+                        <button class="btn btn-info ms-2 my-2 d-none" id="reset">Reset</button>
+                    </div>
+                </div>
+            </div>
+            <div id="stoptime" class="d-none">
+                <div class="row justify-content-center my-3">
+                    <div class="col-8 border border-1 border-danger rounded-3">
+                        <h3 class="text-center">Stop Times!</h3>
+                        <div id="showstoptime"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        let progress = document.getElementById('progress');
+        let download = document.getElementById('download');
+        let stop = document.getElementById('stop');
+        let buffer = 0;
+        let interval = null;
+        let msg = document.getElementById('msg');
+        download.addEventListener('click', () => {
+            download.innerText = 'Download';
+            download.classList.remove('btn-danger');
+            download.classList.add('btn-success');
+            interval = setInterval(() => {
+                buffer += 5;
+                if (buffer > 100) {
+                    clearInterval(interval);
+                } else {
+                    progress.style.width = `${buffer}%`;
+                    progress.innerText = `${buffer}%`;
+                }
+                if (buffer == 100) {
+                    msg.innerText = `Download Completed !`;
+                }
+            }, 1000);
+        });
+        stop.addEventListener('click', () => {
+            clearInterval(interval);
+            download.innerText = 'Resume';
+            download.classList.remove('btn-success');
+            download.classList.add('btn-danger');
+        });
+        let digits = document.getElementById('digits');
+        let start = document.getElementById('start');
+        let reset = document.getElementById('reset');
+        let timestop = document.getElementById('timestop');
+        let interval2 = null;
+        let sec = 0;
+        let min = 0;
+        let hour = 0;
+        let showstoptime = document.getElementById('showstoptime');
+        let no = 0;
+        let stoptime = document.getElementById('stoptime');
+        digits.innerText = `${hour}:${min}:${sec}`;
+        start.addEventListener('click', () => {
+            reset.classList.add('d-block');
+            reset.classList.remove('d-none');
+            interval2 = setInterval(() => {
+                sec += 1;
+                digits.innerText = `${hour}:${min}:${sec}`;
+                if (sec == 59) {
+                    min++;
+                    sec = 0;
+                }
+                if (min == 59) {
+                    hour++;
+                    min = 0;
+                }
+            }, 1000);
+        });
+        timestop.addEventListener('click', () => {
+            clearInterval(interval2);
+            no++;
+            showstoptime.innerHTML += `
+                <p class="text-center text-bg-danger fs-5">${no}.  You Stoped At ${hour}:${min}:${sec} </p>
+            `;
+            stoptime.classList.add('d-block');
+            stoptime.classList.remove('d-none');
+        });
+        reset.addEventListener('click', () => {
+            sec = 0;
+            min = 0;
+            hour = 0;
+            digits.innerText = `${hour}:${min}:${sec}`;
+            reset.classList.remove('d-block');
+            reset.classList.add('d-none');
+            showstoptime.innerHTML = ``;
+            stoptime.classList.remove('d-block');
+            stoptime.classList.add('d-none');
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>

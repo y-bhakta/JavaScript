@@ -1,0 +1,84 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #fefae0;
+}
+.active{
+    display: block;
+}
+.hide{
+    display: none;
+}
+/* header start */
+header{
+    background-color: #F9D5B4;
+    height: 100px;
+}
+/* header End */
+/* main Start */
+/* From Uiverse.io by Navarog21 */ 
+.dogbtn {
+  width: 10em;
+  position: relative;
+  height: 3.5em;
+  border: 3px ridge #d4a373;
+  outline: none;
+  background-color: transparent;
+  color: #d4a373;
+  transition: 1s;
+  border-radius: 0.3em;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.dogbtn::after {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 3%;
+  width: 95%;
+  height: 40%;
+  background-color: #fefae0;
+  transition: 0.5s;
+  transform-origin: center;
+}
+
+.dogbtn::before {
+  content: "";
+  transform-origin: center;
+  position: absolute;
+  top: 80%;
+  left: 3%;
+  width: 95%;
+  height: 40%;
+  background-color: #fefae0;
+  transition: 0.5s;
+}
+
+.dogbtn:hover::before, .dogbtn:hover::after {
+  transform: scale(0)
+}
+
+.dogbtn:hover {
+  box-shadow: inset 0px 0px 25px #d4a373;
+}
+select[id="breeds"]{
+  background-color: #d4a373;
+  color: #fefae0;
+}
+#breeds::-webkit-scrollbar{
+  display: none;
+}
+.sh{
+  box-shadow: 3px 3px #d4a373;
+  border-radius: 20px;
+}
+.shh{
+  box-shadow: -3px 3px #d4a373;
+  border-radius: 20px;
+}
+/* main End */

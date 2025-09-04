@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./assets/img/logo.jpg">
+    <title>Dog API</title>
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="container h-100">
+            <div class="row h-100">
+                <div class="col-12 d-flex h-100">
+                    <div class="col-4 col-md-4 col-lg-2 h-100">
+                        <img src="./assets/img/logo4.png" class="w-100 h-100" style="object-fit: cover;" alt="">
+                    </div>
+                    <div class="col-8 col-md-8 col-lg-10 d-flex justify-content-center align-items-center">
+                        <h2>Fetch Dog APIs..</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section>
+            <div class="container my-2">
+                <div class="row">
+                    <div class="col-12 col-md-6 col-lg-7">
+                        <div class="sh p-2">
+                            <div class="d-flex justify-content-center align-items-center mb-3"
+                                style="width: 100%;height: 400px;">
+                                <div class="w-100 h-100 imgdiv">
+                                    <img src="" id="dog-img" width="100%" height="100%"
+                                        style="object-fit: cover;object-position: center;border-radius: 15px;" alt="">
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <div class="col-5">
+                                    <button class="dogbtn" onclick="fetchApi()">
+                                        Fetch Dog
+                                    </button>
+                                </div>
+                                <div class="col-5 d-flex align-items-center">
+                                    <select class="form-select" aria-label="Default select example" name="dogname"
+                                        id="breeds">
+
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="my-3 col-12 col-md-6 col-lg-5">
+                        <div class="p-2 shh">
+                            <div class="title">
+                                <h2 class="text-center" style="color: #d4a373;">Details</h2>
+                            </div>
+                            <div class="py-4">
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span class="fs-4 fw-bold">Name:</span>
+                                    <span id="fetchedname" class="fs-4 fw-normal"></span>
+                                </div>
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span class="fs-4 fw-bold">Life Span:</span>
+                                    <span id="fetchedage" class="fs-4 fw-normal"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="./assets/js/app.js"></script>
+    <script src="./assets/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
