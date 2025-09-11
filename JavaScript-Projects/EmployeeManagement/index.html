@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Employee Management</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./asests/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Winky+Rough:ital,wght@0,300..900;1,300..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header class="py-2 shadow">
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-12 col-md-5 col-lg-4">
+                    <ul class="list-unstyled d-flex justify-content-between m-0 align-items-center h-100">
+                        <li>
+                            <button class="navbtn active" onclick="adddata()" id="navadd">AddData</button>
+                        </li>
+                        <li>
+                            <button class="navbtn" onclick="view()" id="navview">ViewData</button>
+                        </li>
+                        <li>
+                            <button class="navbtn" onclick="search()" id="navsearch">Search</button>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-12 col-md-7 col-lg-6 justify-content-center d-flex">
+                    <h2 class="text-white heading">Employee Management System</h2>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="my-5" id="empsec">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-8 col-lg-6">
+                        <div class="col-12 py-4">
+                            <h3 class="text-white text-center fw-bold">Add Employee Data</h3>
+                        </div>
+                        <div class="col-12 d-flex flex-wrap py-4 px-2 addemp mb-4 justify-content-center">
+                            <div class="col-12 px-4  mb-3">
+                                <input class="py-2 px-3 rounded-2 border-0 w-100" type="text" id="name"
+                                    placeholder="Enter Employee Name..">
+                            </div>
+                            <div class="col-12 px-4  mb-3">
+                                <select name="post" id="department" class="form-control">
+                                    <option value="" hidden selected class="text-muted">Select Post</option>
+                                    <option value="Software Engineer">Software Engineer</option>
+                                    <option value="HR">HR</option>
+                                    <option value="Manager">Manager</option>
+                                    <option value="Accountant">Accountant</option>
+                                    <option value="Intern">Intern</option> 
+                                </select>
+                            </div>
+                            <div class="col-12 px-4 mb-3">
+                                <input class="py-2 px-3 rounded-2 border-0 w-100" type="text" id="id"
+                                    placeholder="ID(numbers)">
+                            </div>
+                            <div class="col-12 px-4 mb-3">
+                                <input class="py-2 px-3 rounded-2 border-0 w-100" type="number" id="salary"
+                                    placeholder="Salary..">
+                            </div>
+                            <div align="center" class="col-12 py-4 px-2 hide" id="hide">
+                                <div class="col-6">
+                                    <div class="text-danger text-center fs-4" id="alert"></div>
+                                </div>
+                            </div>
+                            <div class="col-12 py-4 d-flex justify-content-center">
+                                <button class="addbtn" id="addemp">
+                                    Submit
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="hide my-5" id="tablesec">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-11 col-lg-10 py-4 px-2  tableemp overflow-auto">
+                        <div class="">
+                            <table class="table table-striped table-bordered table-dark m-0">
+                                <thead>
+                                    <tr>
+                                        <th>#ID</th>
+                                        <th>Name</th>
+                                        <th>Department</th>
+                                        <th>Salary</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="empdata">
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="hide my-5" id="searchsec">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-8 col-lg-6 d-flex flex-wrap py-4 px-2 shadow searchemp">
+                        <div class="col-12">
+                            <h3 class="text-white text-center">Search Employee</h3>
+                        </div>
+                        <div class="col-12 d-flex mt-3 justify-content-between">
+                            <div class="col-8 d-flex justify-content-center">
+                                <input type="text" placeholder="Search Employee(Name)" id="searchdata"
+                                    class="py-2 px-3 rounded-2 border-0 w-100">
+                            </div>
+                            <div class="col-4 d-flex justify-content-center">
+                                <button class="btn btn-outline-warning" onclick="searchfun()">
+                                    Search
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center my-3">
+                    <div class="col-12 col-md-8 col-lg-6 datatable p-3">
+                        <div class="col-12 d-flex flex-wrap justify-content-between">
+                            <div class="text-danger fs-4" id="nodata"></div>
+                        </div>
+                        <div class="col-12 d-flex flex-wrap justify-content-between">
+                            <div class="text-white fs-4">Name:</div>
+                            <div id="showname" class="text-white fs-4 wr"></div>
+                        </div>
+                        <div class="col-12 d-flex flex-wrap justify-content-between">
+                            <div class="text-white fs-4">Department:</div>
+                            <div id="showdep" class="text-white fs-4 wr"></div>
+                        </div>
+                        <div class="col-12 d-flex flex-wrap justify-content-between">
+                            <div class="text-white fs-4">ID:</div>
+                            <div id="showid" class="text-white fs-4 wr"></div>
+                        </div>
+                        <div class="col-12 d-flex flex-wrap justify-content-between">
+                            <div class="text-white fs-4">Salary:</div>
+                            <div id="showsalary" class="text-white fs-4 wr"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="modal fade" data-bs-theme="dark" tabindex="-1" id="examplemodal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title text-white">Modal title</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="col-12 px-4  mb-3">
+                            <input class="py-2 px-3 rounded-2 border-0 w-100" type="text" id="newname"
+                                placeholder="Enter Employee Name..">
+                        </div>
+                        <div class="col-12 px-4  mb-3">
+                            <select name="post" id="newdepartment" class="form-control">
+                                <option value="" hidden selected class="text-muted">Select Post</option>
+                                <option value="Software Engineer">Software Engineer</option>
+                                <option value="HR">HR</option>
+                                <option value="Manager">Manager</option>
+                                <option value="Accountant">Accountant</option>
+                                <option value="Intern">Intern</option> 
+                            </select>
+                        </div>
+                        <div class="col-12 px-4 mb-3">
+                            <input class="py-2 px-3 rounded-2 border-0 w-100" type="text" id="newid"
+                                placeholder="ID(numbers)">
+                        </div>
+                        <div class="col-12 px-4 mb-3">
+                            <input class="py-2 px-3 rounded-2 border-0 w-100" type="number" id="newsalary"
+                                placeholder="Salary..">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="updatebtn">Update</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
+    <script src="./asests/app.js"></script>
+</body>
+
+</html>
