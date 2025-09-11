@@ -1,0 +1,22 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+select[id="statelist"]{
+    background-color: #0a9396;
+    color: #e9d8a6;
+    border: none;
+    border-radius: 15px;
+    text-align: center;
+}
+#statelist::-webkit-scrollbar{
+    display: none;
+}
+.hover{
+    transition: 1s;
+}
+.hover:hover{
+    background-color: #ee9b00 !important;
+    color: black !important;
+}
