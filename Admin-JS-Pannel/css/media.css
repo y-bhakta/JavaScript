@@ -1,0 +1,80 @@
+@media(max-width:575px) {
+
+    /* xs */
+    aside {
+        display: none;
+    }
+
+    main {
+        width: calc(100% - 0px);
+    }
+
+    .input-wrapper {
+        width: 250px;
+    }
+    .barchart{
+        height: 250px !important;
+    }
+    .piechart{
+        height: 450px !important;
+    }
+}
+
+@media(min-width:576px) {
+
+    /* sm */
+    aside {
+        display: none;
+    }
+
+    main {
+        width: calc(100% - 0px);
+    }
+}
+
+@media(min-width:768px) {
+
+    /* md */
+    aside {
+        width: 180px !important;
+        display: block;
+    }
+
+    main {
+        width: calc(100% - 180px);
+    }
+    .barchart{
+        height: 325px !important;
+    }
+}
+
+@media(min-width:992px) {
+
+    /* lg */
+    aside {
+        width: 200px !important;
+    }
+
+    main {
+        width: calc(100% - 200px);
+    }
+    .barchart{
+        height: 300px !important;
+    }
+}
+
+@media(min-width:1200px) {
+
+    /* xl */
+    aside {
+        width: 250px !important;
+    }
+
+    main {
+        width: calc(100% - 250px);
+    }
+}
+
+@media(min-width:1400px) {
+    /* xxl */
+}
